@@ -198,7 +198,11 @@ hr {
     cursor: pointer;
     color: #4caf50;
     text-align: center;
-    padding: 6px;
+    padding: 6px;     
+    white-space: nowrap;        
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }
 
 .pwd:hover {
