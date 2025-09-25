@@ -31,13 +31,137 @@ h1 span {
     color: darkgray;
 }
 
+#options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 1rem auto;
+    max-width: 400px;
+    color: wheat;
+}
+
+label {
+    margin: 0.5rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 24px;
+  transition: 0.2s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.switch input:checked + .slider {
+  background-color: #4caf50;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+input[type="number"] {
+  width: 120px;
+  padding: 8px 12px;
+  font-size: 6rem;
+  font-weight: bold;
+  color: white;
+  background: none;
+  transition: 0.2s;
+}
+
+input[type="number"]:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px #4caf5080;
+}
+
+/* Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.number-input {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.number-input input {
+  width: 1.5rem;
+  padding: 8px;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+  outline: none;
+  border: 2px solid #4caf50;
+}
+
+.number-input input:focus {
+  border-color: #059669;
+  box-shadow: 0 0 15px #05966980;
+}
+
+.number-input input:hover {
+    border-color: #059669;
+    box-shadow: 0 0 5px #05966980;
+}
+
+.number-input button {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 3rem;
+  color: #4caf50;
+  transition: background 0.2s;
+}
+
+
 #generate-pwd-btn {
-    background-color: #10B981;
+    background-color: #4caf50;
     color: wheat;
     padding: .5em 1rem;
     border: none;
     border-radius: 5px;
-    margin: 0 auto;
+    margin: 1rem auto;
     cursor: pointer;
 }
 
@@ -47,10 +171,19 @@ h1 span {
     transition: all 0.2s ease-in-out;
 }
 
+#generate-pwd-btn:active, .number-input input:active, .number-input button:active, .slider:active {
+    transform: scale(0.95);
+}
+
+.number-input button:hover, .number-input input:hover, .slider:hover {
+    transform: scale(1.10);
+    transition: all 0.2s ease-in-out;
+}
+
 hr {
     border-color: #273549;
     width: 97%;
-    margin: 1.2rem auto;
+    margin: .5 rem auto;
 }
 
 #pwd-section {
@@ -63,7 +196,7 @@ hr {
     height: 1rem;
     background-color: #273549;
     cursor: pointer;
-    color: #10B981;
+    color: #4caf50;
     text-align: center;
     padding: 6px;
 }

@@ -10,9 +10,26 @@
         <div id="main">
             <h1>Generate a <span>random password</span></h1>
             <h2 id="subtitle">Never use an insecure password again</h2>
-            <div class="tooltip">
-                <button type="button" id="generate-pwd-btn">Generate password</button>
+            <div id="options">
+                <div class="tooltip">
+                    <label for="number-input">Password length:</label>
+                    <span class="number-input">
+                        <button type="button" class="minus">-</button>
+                        <input type="number" id="pwd-length-input" name="length" min="4" max="50" value="12">
+                        <button type="button" class="plus">+</button>
+                        <span class="tooltiptext">Choose a length between MIN and MAX</span>
+                    </span>
+                </div>
+                <div class="tooltip">
+                    <label for="symbols-numbers">Symbols &amp; numbers</label>
+                    <label class="checkbox switch">
+                        <input type="checkbox" id="symbols-numbers" name="symbols-numbers" unchecked>
+                        <span class="slider"></span>
+                        <span class="tooltiptext">Symbols &amp; numbers</span>
+                    </label>
+                </div>
             </div>
+            <button type="button" id="generate-pwd-btn">Generate password</button>
             <hr>
             <div id="pwd-section" class="tooltip">
                 <p class="pwd"></p>
