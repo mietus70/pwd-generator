@@ -34,20 +34,6 @@ const generatePwdBtnEl = document.querySelector("#generate-pwd-btn").addEventLis
 const pwdEl = document.querySelectorAll(".pwd")
 const tooltipEl = document.getElementById("myTooltip")
 const pwdLengthInputEl = document.getElementById("pwd-length-input")
-document.querySelectorAll(".number-input").forEach(container => {
-  const input = container.querySelector("input")
-  const plus = container.querySelector(".plus")
-  const minus = container.querySelector(".minus")
-
-  plus.addEventListener("click", () => {
-    if (input.value < settings.maxLength)
-        settings.passwordLength = input.value = parseInt(input.value) + 1
-  })
-  minus.addEventListener("click", () => {
-    if (input.value > settings.minLength)
-        settings.passwordLength = input.value = parseInt(input.value) - 1
-  })
-})
 
 const symbolsNumbersCheckboxEl = document.getElementById("symbols-numbers")
 symbolsNumbersCheckboxEl.checked = settings.includeNumSym
@@ -67,7 +53,23 @@ symbolsNumbersCheckboxEl.addEventListener("change", (event) => {
     console.log(characters)
 })
 
+document.querySelectorAll(".number-input").forEach(container => {
+  const input = container.querySelector("input")
+  const plus = container.querySelector(".plus")
+  const minus = container.querySelector(".minus")
+
+  plus.addEventListener("click", () => {
+    if (input.value < settings.maxLength)
+        settings.passwordLength = input.value = parseInt(input.value) + 1
+  })
+  minus.addEventListener("click", () => {
+    if (input.value > settings.minLength)
+        settings.passwordLength = input.value = parseInt(input.value) - 1
+  })
+})
 pwdLengthInputEl.value = settings.passwordLength;
+
+
 
 function generatePwdBtn() {
     for(let element of pwdEl) {
