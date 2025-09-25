@@ -68,7 +68,30 @@ document.querySelectorAll(".number-input").forEach(container => {
   })
 })
 pwdLengthInputEl.value = settings.passwordLength;
+pwdLengthInputEl.addEventListener("input", (event) => {
+    let value = parseInt(event.target.value)
+    if (isNaN(value) || value === null || value === undefined) {
+        value = settings.minLength
+        settings.passwordLength = value
+    }
+    if (value < settings.minLength) {
+        value = settings.minLength
+        settings.passwordLength = value
+        event.target.value = value
+    } else if (value > settings.maxLength) {
+        value = settings.maxLength
+        settings.passwordLength = value
+        event.target.value = value
+    }
+})
 
+pwdLengthInputEl.addEventListener("blur", (event) => {
+    let value = parseInt(event.target.value)
+    if (value === "" || value === null || value === undefined || isNaN(parseInt(value)) || parseInt(event.target.value) < settings.minLength) {
+        event.target.value = settings.minLength
+        settings.passwordLength = settings.minLength
+    }
+})
 
 
 function generatePwdBtn() {
