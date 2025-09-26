@@ -73,11 +73,10 @@ pwdLengthInputEl.addEventListener("input", (event) => {
     if (isNaN(value) || value === null || value === undefined) {
         value = settings.minLength
         settings.passwordLength = value
-    }
-    if (value < settings.minLength) {
-        value = settings.minLength
-        settings.passwordLength = value
-        event.target.value = value
+    // } else if (value < settings.minLength) {
+    //     value = settings.minLength
+    //     settings.passwordLength = value
+    //     event.target.value = value
     } else if (value > settings.maxLength) {
         value = settings.maxLength
         settings.passwordLength = value
