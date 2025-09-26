@@ -1,3 +1,18 @@
+/*
+ * index.css — Styling for Password Generator App
+ *
+ * Responsibilities:
+ * - Provide a clean, modern, responsive layout for the password generator UI
+ * - Style all controls, tooltips, and password display for usability and clarity
+ * - Use color and spacing to highlight interactive elements
+ *
+ * Notes:
+ * - No frameworks or resets are used; all styles are custom and self-contained
+ * - Utility classes and selectors are grouped by component/section
+ * - Only comments were added; no CSS rules were changed
+ */
+
+/* === Layout and Base Styles === */
 body {
     margin: 0;
     background-color: #1F2937;
@@ -18,6 +33,7 @@ body {
     padding: 15px;
 }
 
+/* === Typography === */
 h1 {
     color: white;
 }
@@ -31,6 +47,7 @@ h1 span {
     color: darkgray;
 }
 
+/* === Options Section === */
 #options {
     display: flex;
     flex-wrap: wrap;
@@ -45,6 +62,7 @@ label {
     margin: 0.5rem;
 }
 
+/* === Switch (Toggle) Styles === */
 .switch {
     position: relative;
     display: inline-block;
@@ -90,6 +108,7 @@ label {
     transform: translateX(26px);
 }
 
+/* === Number Input Styles === */
 input[type="number"] {
     width: 120px;
     padding: 8px 12px;
@@ -155,6 +174,7 @@ input[type="number"] {
 }
 
 
+/* === Generate Button === */
 #generate-pwd-btn {
     background-color: #4caf50;
     color: wheat;
@@ -186,6 +206,7 @@ hr {
     margin: .5 rem auto;
 }
 
+/* === Password Display Section === */
 #pwd-section {
     display: flex;
 }
@@ -214,6 +235,7 @@ hr {
     z-index: 1;
 }
 
+/* === Tooltip Styles === */
 .tooltip {
     position: relative;
     display: inline-block;

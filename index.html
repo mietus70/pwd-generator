@@ -1,3 +1,17 @@
+<!--
+  index.html — Password Generator App
+
+  Responsibilities:
+  - Provide the main structure and layout for the password generator UI
+  - Define IDs and classes used by JavaScript and CSS for interactivity and styling
+  - Reference external stylesheet (index.css) and script (index.js)
+
+  Notes:
+  - All UI controls (length input, plus/minus, symbols toggle, generate button) are
+    identified by unique IDs/classes for easy JS/CSS targeting
+  - Only comments were added; no HTML structure was changed
+-->
+
 <!DOCTYPE html>
 <html lang="en US">
     <head>
@@ -7,9 +21,11 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
+        <!-- Main app container -->
         <div id="main">
             <h1>Generate a <span>random password</span></h1>
             <h2 id="subtitle">Never use an insecure password again</h2>
+            <!-- Options section: password length and symbols toggle -->
             <div id="options">
                 <div class="tooltip">
                     <label for="number-input">Password length</label>
@@ -29,14 +45,17 @@
                     </label>
                 </div>
             </div>
+            <!-- Generate button -->
             <button type="button" id="generate-pwd-btn">Generate password</button>
             <hr>
+            <!-- Password display section -->
             <div id="pwd-section" class="tooltip">
                 <p class="pwd"></p>
                 <p class="pwd"></p>
                 <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
             </div>
         </div>
+        <!-- Main script -->
         <script src="index.js"></script>
     </body>
 </html>
