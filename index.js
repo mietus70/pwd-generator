@@ -90,6 +90,11 @@ pwdLengthInputEl.addEventListener("blur", (event) => {
     if (value === "" || value === null || value === undefined || isNaN(parseInt(value)) || parseInt(event.target.value) < settings.minLength) {
         event.target.value = settings.minLength
         settings.passwordLength = settings.minLength
+    } else if (parseInt(event.target.value) > settings.maxLength) {
+        event.target.value = settings.maxLength
+        settings.passwordLength = settings.maxLength
+    }   else {
+        settings.passwordLength = parseInt(event.target.value)
     }
 })
 
