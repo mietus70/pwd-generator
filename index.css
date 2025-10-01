@@ -33,17 +33,41 @@ body {
     padding: 15px;
 }
 
+#logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}   
+
+#logo img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+#logo-text {
+    color: #2563EB;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 /* === Typography === */
 h1 {
-    color: white;
+    color: rgb(216, 216, 216);
 }
 
 h1 span {
     display: block;
-    color: #10B981;
+    color: #2563EB;
 }
 
 #subtitle {
+    display: block;
     color: darkgray;
 }
 
